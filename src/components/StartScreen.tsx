@@ -2,37 +2,69 @@ interface StartScreenProps {
   onStart: () => void;
 }
 
+const sampleQuestions = [
+  'Has traveled abroad',
+  'Speaks 2+ languages',
+  'Loves spicy food',
+  'FREE',
+  'Has a pet',
+  'Plays an instrument',
+  'Morning person',
+  'Can do a cartwheel',
+  'Loves karaoke',
+];
+
 export function StartScreen({ onStart }: StartScreenProps) {
   return (
     <div className="app-container">
-      <div className="text-center max-w-sm">
-        <div className="paper-card p-6 mb-6">
-          <h1 className="text-4xl font-bold text-ink mb-1" style={{ fontFamily: 'Shippori Mincho, serif' }}>桜 Bingo</h1>
-          <p className="text-sm text-ink/70 mb-4" style={{ fontFamily: 'Zen Maru Gothic, sans-serif' }}>A spring social bingo</p>
+      <div className="paper-card p-6 md:p-10 max-w-5xl">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
+          {/* Hero section */}
+          <div className="flex-1 space-y-6 text-center md:text-left fade-in" style={{ animationDelay: '0ms' }}>
+            <div>
+              <h1 className="font-['Shippori_Mincho'] text-5xl md:text-6xl text-[--ink]">桜 Bingo</h1>
+              <p className="text-xl text-[--sakura-blush] mt-2">A spring social bingo</p>
+            </div>
 
-          <div className="bg-transparent rounded p-4 mb-4 text-left">
-            <h2 className="font-semibold text-ink mb-2">How to play</h2>
-            <ul className="text-left text-ink/70 text-sm space-y-2">
-              <li>• Find people who match the questions</li>
-              <li>• Tap a square when you find a match</li>
-              <li>• Get 5 in a row to win!</li>
-            </ul>
+            <p className="text-base text-[--ink]/80 max-w-md mx-auto md:mx-0">
+              Find people who match the prompts. Tap squares when you find matches. Get 5 in a row to win!
+            </p>
+
+            <button
+              onClick={onStart}
+              className="w-full md:w-auto bg-[--accent] text-[--ink] hover:bg-[--sakura-deep] hover:text-white font-semibold py-3 px-8 rounded-lg text-lg shadow-md transition-all duration-300"
+            >
+              Play Now
+            </button>
           </div>
 
-          <button
-            onClick={onStart}
-            className="w-full bg-[var(--accent)] text-white font-semibold py-3 px-6 rounded-lg text-lg shadow-sm hover:bg-[var(--sakura-deep)] transition-colors"
-          >
-            Start Game
-          </button>
-        </div>
+          {/* Preview section */}
+          <div className="flex-1 space-y-4 fade-in" style={{ animationDelay: '200ms' }}>
+            <p className="text-sm text-center text-[--ink]/60">See it in action ↓</p>
 
-        {/* Decorative petals */}
-        <div aria-hidden>
-          <div className="sakura-petal" style={{ left: '8%', animationDelay: '0s' }} />
-          <div className="sakura-petal" style={{ left: '55%', top: '5%', width: 22, height: 22, animationDelay: '1.6s' }} />
-          <div className="sakura-petal" style={{ left: '82%', top: '10%', width: 18, height: 18, animationDelay: '0.8s' }} />
+            {/* 3x3 preview grid */}
+            <div className="grid grid-cols-3 gap-2 md:gap-3 max-w-sm mx-auto">
+              {sampleQuestions.map((question, idx) => (
+                <div
+                  key={idx}
+                  className="preview-square pulse-wave"
+                  style={{ animationDelay: `${idx * 100}ms` }}
+                >
+                  <span className="text-xs md:text-sm text-[--ink]">{question}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
+      </div>
+
+      {/* 5 decorative petals - medium count */}
+      <div aria-hidden="true">
+        <div className="sakura-petal" style={{ left: '8%', width: '26px', height: '26px', animationDelay: '0s' }} />
+        <div className="sakura-petal" style={{ left: '25%', top: '12%', width: '22px', height: '22px', animationDelay: '1.4s' }} />
+        <div className="sakura-petal" style={{ left: '50%', width: '28px', height: '28px', animationDelay: '2.8s' }} />
+        <div className="sakura-petal" style={{ left: '72%', top: '8%', width: '24px', height: '24px', animationDelay: '0.7s' }} />
+        <div className="sakura-petal" style={{ left: '88%', top: '15%', width: '20px', height: '20px', animationDelay: '2.1s' }} />
       </div>
     </div>
   );
