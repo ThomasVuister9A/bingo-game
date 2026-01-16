@@ -47,6 +47,37 @@ Social bingo game for mixers: 5x5 board with 24 random questions + FREE SPACE ce
 **Testing**: Colocated `*.test.ts` files with Vitest + RTL
 **Styling**: Tailwind v4 with `@theme` CSS variables in `index.css`, no config file
 
+## Design Guide
+
+### Design System
+**Theme**: Soft Japanese aesthetic with sakura (cherry blossom) motif
+**Colors**: Defined in `@theme` block in `src/index.css`:
+- Sakura palette: `--sakura-petal`, `--sakura-blush`, `--sakura-deep`
+- Neutrals: `--paper-cream`, `--wood-1`, `--wood-2`, `--ink`
+- Accent: `--accent` (rose)
+
+**Typography**: 
+- Primary: 'Zen Maru Gothic' (body)
+- Secondary: 'Shippori Mincho' (headings)
+- Loaded via Google Fonts in `index.css`
+
+**Key Visual Elements**:
+- `.paper-card`: Card-style containers with soft shadows
+- `.sakura-petal`: Floating animation background effect
+- `.sakura-stamp`: Marked square indicator
+- `.bloom`: Victory animation (420ms cubic-bezier)
+
+**Tailwind v4**:
+- Use `@theme` CSS variables in `index.css`, no config file
+- Access theme vars directly in classes: `bg-[--sakura-petal]`, `text-[--ink]`
+- Refer to `.github/instructions/tailwind-4.instructions.md` for v4 features
+
+**Design Principles**:
+- Avoid generic AI aesthetics (no purple gradients)
+- Use soft shadows, gentle transitions, organic shapes
+- Maintain consistency with existing sakura theme
+- See `.github/instructions/frontend-design.instructions.md` for detailed guidance
+
 ## Common Tasks
 
 **Add Questions**: Edit `src/data/questions.ts`, push to `questions[]` array
