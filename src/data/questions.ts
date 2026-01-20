@@ -1,28 +1,36 @@
 export const questions: string[] = [
-  "bikes to work",
-  "has lived in another country",
-  "has a pet",
-  "prefers tea over coffee",
-  "plays an instrument",
-  "speaks more than 2 languages",
-  "has run a marathon",
-  "was born in a different state",
-  "has met a celebrity",
-  "can juggle",
-  "has been skydiving",
-  "loves cooking",
-  "has a garden",
-  "has traveled to Asia",
-  "is left-handed",
-  "has a twin",
-  "plays video games",
-  "does yoga",
-  "has a hidden talent",
-  "loves spicy food",
-  "has been on TV",
-  "collects something unique",
-  "has read a book this month",
-  "knows sign language",
+  // Anime & Manga (Easy - Medium)
+  "has watched an anime series",
+  "can name 3+ Studio Ghibli films",
+  "has read a manga",
+  "knows what 'shounen' means",
+  "has a favorite anime character",
+  
+  // Games (Easy - Medium)
+  "has played a Nintendo game",
+  "knows what 'gacha' means in gaming",
+  "has played Pokémon",
+  "can name a Japanese game developer",
+  
+  // Food (Easy - Bold)
+  "has tried sushi",
+  "knows what 'umami' means",
+  "has made ramen from scratch",
+  "can use chopsticks",
+  "loves matcha flavored things",
+  "has tried natto (fermented soybeans)",
+  
+  // Locations & Travel (Easy - Medium)
+  "wants to visit Japan",
+  "has been to Japan",
+  "can name 3+ Japanese cities",
+  "knows what a 'torii' gate is",
+  
+  // History & Culture (Medium - Bold)
+  "knows a Japanese word or phrase",
+  "can name a famous samurai",
+  "has participated in a tea ceremony",
+  "knows what 'hanami' (cherry blossom viewing) is",
 ];
 
 export const FREE_SPACE = "FREE SPACE";
