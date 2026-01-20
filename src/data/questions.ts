@@ -31,6 +31,7 @@ export const questions: string[] = [
   "can name a famous samurai",
   "has participated in a tea ceremony",
   "knows what 'hanami' (cherry blossom viewing) is",
+  "has watched a Japanese movie or drama",
 ];
 
 export const FREE_SPACE = "FREE SPACE";

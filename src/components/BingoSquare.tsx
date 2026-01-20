@@ -2,10 +2,11 @@ import type { BingoSquareData } from '../types';
 
 interface BingoSquareProps {
   square: BingoSquareData;
+  isWinning: boolean;
   onClick: () => void;
 }
 
-export function BingoSquare({ square, onClick }: BingoSquareProps) {
+export function BingoSquare({ square, isWinning, onClick }: BingoSquareProps) {
   const baseClasses =
     'relative flex items-center justify-center p-3 text-center rounded-lg transition-all duration-150 select-none min-h-[68px] text-sm leading-tight';
 
@@ -13,13 +14,15 @@ export function BingoSquare({ square, onClick }: BingoSquareProps) {
     ? 'bg-[linear-gradient(180deg,var(--sakura-blush),rgba(255,255,255,0.8))] border-[2px] border-[var(--sakura-deep)] text-[var(--ink)]'
     : 'bg-white border border-[var(--wood-1)] text-[var(--ink)] hover:translate-y-[-2px] active:translate-y-0';
 
+  const winningClasses = isWinning ? 'ring-2 ring-[var(--accent)] ring-offset-2' : '';
+  
   const freeSpaceClasses = square.isFreeSpace ? 'font-bold text-sm' : '';
 
   return (
     <button
       onClick={onClick}
       disabled={square.isFreeSpace}
-      className={`${baseClasses} ${stateClasses} ${freeSpaceClasses}`}
+      className={`${baseClasses} ${stateClasses} ${winningClasses} ${freeSpaceClasses}`}
       aria-pressed={square.isMarked}
       aria-label={square.isFreeSpace ? 'Free space' : square.text}
     >
