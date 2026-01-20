@@ -105,3 +105,14 @@ body {
   60% { transform: scale(1.06); opacity: 1; }
   100% { transform: scale(1); opacity: 1; }
 }
+
+/* Card flip animation */
+.card-flip {
+  animation: flipCard 420ms cubic-bezier(.2,.9,.3,1);
+}
+
+@keyframes flipCard {
+  0% { transform: rotateY(0deg) scale(1); }
+  50% { transform: rotateY(90deg) scale(0.95); }
+  100% { transform: rotateY(0deg) scale(1); }
+}

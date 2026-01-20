@@ -1,8 +1,9 @@
 interface StartScreenProps {
   onStart: () => void;
+  onStartCardDeck: () => void;
 }
 
-export function StartScreen({ onStart }: StartScreenProps) {
+export function StartScreen({ onStart, onStartCardDeck }: StartScreenProps) {
   return (
     <div className="app-container">
       <div className="text-center max-w-sm">
@@ -11,20 +12,28 @@ export function StartScreen({ onStart }: StartScreenProps) {
           <p className="text-sm text-ink/70 mb-4" style={{ fontFamily: 'Zen Maru Gothic, sans-serif' }}>A spring social bingo</p>
 
           <div className="bg-transparent rounded p-4 mb-4 text-left">
-            <h2 className="font-semibold text-ink mb-2">How to play</h2>
+            <h2 className="font-semibold text-ink mb-2">Choose your mode</h2>
             <ul className="text-left text-ink/70 text-sm space-y-2">
-              <li>• Find people who match the questions</li>
-              <li>• Tap a square when you find a match</li>
-              <li>• Get 5 in a row to win!</li>
+              <li>• <strong>Classic:</strong> 5×5 grid, get 5 in a row</li>
+              <li>• <strong>Card Deck:</strong> Flip through questions one by one</li>
             </ul>
           </div>
 
-          <button
-            onClick={onStart}
-            className="w-full bg-[var(--accent)] text-white font-semibold py-3 px-6 rounded-lg text-lg shadow-sm hover:bg-[var(--sakura-deep)] transition-colors"
-          >
-            Start Game
-          </button>
+          <div className="space-y-3">
+            <button
+              onClick={onStart}
+              className="w-full bg-(--accent) text-white font-semibold py-3 px-6 rounded-lg text-lg shadow-sm hover:bg-(--sakura-deep) transition-colors"
+            >
+              Classic Bingo
+            </button>
+            
+            <button
+              onClick={onStartCardDeck}
+              className="w-full bg-(--sakura-petal) text-(--sakura-deep) font-semibold py-3 px-6 rounded-lg text-lg shadow-sm hover:bg-(--sakura-blush) transition-colors"
+            >
+              🌸 Card Deck
+            </button>
+          </div>
         </div>
 
         {/* Decorative petals */}
